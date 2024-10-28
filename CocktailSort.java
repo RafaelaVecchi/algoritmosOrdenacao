@@ -51,8 +51,7 @@ public class CocktailSort {
                     swapped = true;
                 }
             }
-
-            // Ajuste o início para a próxima passagem
+            
             start++;
         }
 
