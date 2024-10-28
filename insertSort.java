@@ -1,5 +1,5 @@
 public class insertSort {
-    /**
+    /*
      * Ordena o vetor de inteiros em ordem crescente usando o algoritmo de Insertion Sort.
      *
      * Este método percorre o vetor da esquerda para a direita, inserindo cada elemento na

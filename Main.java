@@ -1,11 +1,17 @@
 public class Main {
+    /*
+     * Método que define os tamanhos dos vetores, gera os vetores aleatórios para cada tamanho,
+     * e chama os algoritmos de ordenação para realizar 5 rodadas de teste. No final, exibe
+     * os resultados médios de tempo de execução, número de trocas e número de iterações
+     * para cada algoritmo e cada tamanho de vetor.
+     */
     public static void main(String[] args) {
         int[] tamanhos = {1000, 10000, 100000, 500000, 1000000};
         int seed = 42; // Seed fixa para replicabilidade
         geradorNumeros gerador = new geradorNumeros(seed);
 
+        // Loop para executar os algoritmos de ordenação para cada tamanho de vetor
         for (int tamanho : tamanhos) {
-            // Vetores para armazenar os resultados de 5 rodadas para cada algoritmo
             System.out.println("Tamanho vetor: " + tamanho);
 
             executarAlgoritmo("InsertSort", gerador, tamanho);
@@ -42,7 +48,7 @@ public class Main {
                     resultado = CocktailSort.ordenar(vetor, tamanho); // Adiciona o CocktailSort
                     break;
             }
-
+            // Armazena os resultados da rodada nos arrays correspondentes
             temposExecucao[i] = resultado[0];
             trocasTotais[i] = (int) resultado[1];
             iteracoesTotais[i] = (int) resultado[2];
@@ -52,12 +58,15 @@ public class Main {
         calcularMediaResultados(temposExecucao, trocasTotais, iteracoesTotais, 5, nomeAlgoritmo);
     }
 
-    // Calcula e exibe a média dos resultados para o algoritmo atual
+    /*
+    * Este método soma os tempos de execução, as trocas e as iterações de todas as rodadas,
+    * calcula a média de cada métrica e exibe o resultado médio para o algoritmo atual.*/
     private static void calcularMediaResultados(long[] temposExecucao, int[] trocas, int[] iteracoes, int rodadas, String nomeAlgoritmo) {
         long tempoTotal = 0;
         int totalTrocas = 0;
         int totalIteracoes = 0;
 
+        // Soma os valores de todas as rodadas para calcular as médias
         for (int i = 0; i < rodadas; i++) {
             tempoTotal += temposExecucao[i];
             totalTrocas += trocas[i];

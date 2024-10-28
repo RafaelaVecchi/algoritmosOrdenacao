@@ -1,5 +1,5 @@
 public class selectionSort {
-    /**
+    /*
      * Ordena o vetor de inteiros em ordem crescente usando o algoritmo de Selection Sort.
      *
      * Este método percorre o vetor para encontrar o menor elemento em cada iteração do loop
