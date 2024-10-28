@@ -11,6 +11,7 @@ public class Main {
             executarAlgoritmo("InsertSort", gerador, tamanho);
             executarAlgoritmo("SelectionSort", gerador, tamanho);
             executarAlgoritmo("ShellSort", gerador, tamanho);
+            executarAlgoritmo("CocktailSort", gerador, tamanho); // Adicionado CocktailSort
 
             System.out.println("=============================================");
         }
@@ -36,6 +37,9 @@ public class Main {
                     break;
                 case "ShellSort":
                     resultado = shellSort.ordenar(vetor, tamanho);
+                    break;
+                case "CocktailSort":
+                    resultado = CocktailSort.ordenar(vetor, tamanho); // Adiciona o CocktailSort
                     break;
             }
 
