@@ -34,8 +34,6 @@ public class CocktailSort {
             if (!swapped) {
                 break;
             }
-
-            // Ajuste o fim para a próxima passagem
             end--;
             swapped = false;
 
@@ -51,8 +49,7 @@ public class CocktailSort {
                     swapped = true;
                 }
             }
-
-            // Ajuste o início para a próxima passagem
+            
             start++;
         }
 
