@@ -6,13 +6,13 @@ public class Main {
 
         for (int tamanho : tamanhos) {
             // Vetores para armazenar os resultados de 5 rodadas para cada algoritmo
-            System.out.println("Tamanho do vetor: " + tamanho);
+            System.out.println("Tamanho vetor: " + tamanho);
 
             executarAlgoritmo("InsertSort", gerador, tamanho);
             executarAlgoritmo("SelectionSort", gerador, tamanho);
             executarAlgoritmo("ShellSort", gerador, tamanho);
 
-            System.out.println("---------------------------------------------------");
+            System.out.println("=============================================");
         }
     }
 
