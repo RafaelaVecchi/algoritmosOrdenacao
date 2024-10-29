@@ -49,7 +49,7 @@ public class Main {
                     resultado = CocktailSort.ordenar(vetor, tamanho);
                     break;
                 case "GnomeSort":
-                    resultado = GnomeSort.ordenar(vetor, tamanho); // Adiciona o GnomeSort
+                    resultado = GnomeSort.ordenar(vetor, tamanho);
                     break;
             }
             // Armazena os resultados da rodada nos arrays correspondentes
