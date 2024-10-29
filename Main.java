@@ -26,8 +26,8 @@ public class Main {
     private static void executarAlgoritmo(String nomeAlgoritmo, geradorNumeros gerador, int tamanho) {
         // Arrays para armazenar as métricas em 5 rodadas
         long[] temposExecucao = new long[5];
-        int[] trocasTotais = new int[5];
-        int[] iteracoesTotais = new int[5];
+        long[] trocasTotais = new long[5];
+        long[] iteracoesTotais = new long[5];
 
         for (int i = 0; i < 5; i++) {
             int[] vetor = gerador.gerarVetor(tamanho);
@@ -50,8 +50,8 @@ public class Main {
             }
             // Armazena os resultados da rodada nos arrays correspondentes
             temposExecucao[i] = resultado[0];
-            trocasTotais[i] = (int) resultado[1];
-            iteracoesTotais[i] = (int) resultado[2];
+            trocasTotais[i] = (long) resultado[1];
+            iteracoesTotais[i] = (long) resultado[2];
         }
 
         // Calcula a média dos resultados e exibe
@@ -61,10 +61,10 @@ public class Main {
     /*
     * Este método soma os tempos de execução, as trocas e as iterações de todas as rodadas,
     * calcula a média de cada métrica e exibe o resultado médio para o algoritmo atual.*/
-    private static void calcularMediaResultados(long[] temposExecucao, int[] trocas, int[] iteracoes, int rodadas, String nomeAlgoritmo) {
+    private static void calcularMediaResultados(long[] temposExecucao, long[] trocas, long[] iteracoes, int rodadas, String nomeAlgoritmo) {
         long tempoTotal = 0;
-        int totalTrocas = 0;
-        int totalIteracoes = 0;
+        long totalTrocas = 0;
+        long totalIteracoes = 0;
 
         // Soma os valores de todas as rodadas para calcular as médias
         for (int i = 0; i < rodadas; i++) {
@@ -74,7 +74,7 @@ public class Main {
         }
 
         System.out.println("Algoritmo: " + nomeAlgoritmo);
-        System.out.println("Tempo médio de execução: " + (tempoTotal / rodadas) + " ns");
+        System.out.println("Tempo médio de execução: " + ((tempoTotal / 1000) / rodadas) + " ms");
         System.out.println("Número médio de trocas: " + (totalTrocas / rodadas));
         System.out.println("Número médio de iterações: " + (totalIteracoes / rodadas));
         System.out.println();

@@ -7,9 +7,9 @@ public class selectionSort {
      *
      * */
     public static long[] ordenar(int[] vetor, int tamanho) {
-        long inicio = System.nanoTime();
-        int trocas = 0;
-        int iteracoes = 0;
+        long inicio = System.currentTimeMillis();
+        long trocas = 0;
+        long iteracoes = 0;
 
         // Inicia o Selection Sort no vetor
         for (int i = 0; i < tamanho - 1; i++) {
@@ -32,7 +32,7 @@ public class selectionSort {
             }
         }
 
-        long fim = System.nanoTime();
+        long fim = System.currentTimeMillis();
         long tempoExecucao = fim - inicio;
         return new long[]{tempoExecucao, trocas, iteracoes};
     }

@@ -6,9 +6,9 @@ public class insertSort {
      * posição correta dentro da parte já ordenada do vetor.
      */
     public static long[] ordenar(int[] vetor, int tamanho) {
-        long inicio = System.nanoTime();
-        int trocas = 0;
-        int iteracoes = 0;
+        long inicio = System.currentTimeMillis();
+        long trocas = 0;
+        long iteracoes = 0;
 
         // Inicia o Insertion Sort no vetor
         for (int i = 1; i < tamanho; i++) {
@@ -26,7 +26,7 @@ public class insertSort {
             iteracoes++;
         }
 
-        long fim = System.nanoTime();
+        long fim = System.currentTimeMillis();
         long tempoExecucao = fim - inicio;
         return new long[]{tempoExecucao, trocas, iteracoes};
     }

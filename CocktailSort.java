@@ -2,9 +2,9 @@ public class CocktailSort {
 
     // Retorna um array com [tempoExecucao, numeroTrocas, numeroIteracoes]
     public static long[] ordenar(int[] vetor, int tamanho) {
-        long inicio = System.nanoTime();
-        int trocas = 0;
-        int iteracoes = 0;
+        long inicio = System.currentTimeMillis();
+        long trocas = 0;
+        long iteracoes = 0;
 
         boolean swapped = true;
         int start = 0;
@@ -53,7 +53,7 @@ public class CocktailSort {
             start++;
         }
 
-        long fim = System.nanoTime();
+        long fim = System.currentTimeMillis();
         long tempoExecucao = fim - inicio;
 
         // Retorna as métricas no formato esperado: [tempoExecucao, numeroTrocas, numeroIteracoes]

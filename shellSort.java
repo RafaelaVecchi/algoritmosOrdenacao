@@ -8,9 +8,9 @@ public class shellSort {
  * corretas rapidamente
  * */
     public static long[] ordenar(int[] vetor, int tamanho) {
-        long inicio = System.nanoTime();
-        int trocas = 0;
-        int iteracoes = 0;
+        long inicio = System.currentTimeMillis();
+        long trocas = 0;
+        long iteracoes = 0;
 
         // Define o intervalo inicial usando a sequência de Shell
         int intervalo = 1;
@@ -40,7 +40,7 @@ public class shellSort {
         }
 
 
-        long fim = System.nanoTime();
+        long fim = System.currentTimeMillis();
         long tempoExecucao = fim - inicio;
         return new long[]{tempoExecucao, trocas, iteracoes};
     }

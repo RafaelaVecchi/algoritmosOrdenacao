@@ -8,14 +8,14 @@ public class geradorNumeros {
     private final Random random;
 
     public geradorNumeros(int seed) {
-        this.random = new Random(seed);  // Seed fixa para replicabilidade
+        this.random = new Random(seed);
     }
 
     // Gera um vetor de inteiros aleatórios com o tamanho especificado.
     public int[] gerarVetor(int tamanho) {
         int[] vetor = new int[tamanho];
         for (int i = 0; i < tamanho; i++) {
-            vetor[i] = random.nextInt(1000000); // Valores entre 0 e 999999
+            vetor[i] = random.nextInt(100000);
         }
         return vetor;
     }
