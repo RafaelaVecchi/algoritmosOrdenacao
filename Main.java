@@ -18,6 +18,7 @@ public class Main {
             executarAlgoritmo("SelectionSort", gerador, tamanho);
             executarAlgoritmo("ShellSort", gerador, tamanho);
             executarAlgoritmo("CocktailSort", gerador, tamanho); // Adicionado CocktailSort
+            executarAlgoritmo("GnomeSort", gerador, tamanho);    // Adicionado GnomeSort
 
             System.out.println("=============================================");
         }
@@ -45,13 +46,16 @@ public class Main {
                     resultado = shellSort.ordenar(vetor, tamanho);
                     break;
                 case "CocktailSort":
-                    resultado = CocktailSort.ordenar(vetor, tamanho); // Adiciona o CocktailSort
+                    resultado = CocktailSort.ordenar(vetor, tamanho);
+                    break;
+                case "GnomeSort":
+                    resultado = GnomeSort.ordenar(vetor, tamanho); // Adiciona o GnomeSort
                     break;
             }
             // Armazena os resultados da rodada nos arrays correspondentes
             temposExecucao[i] = resultado[0];
-            trocasTotais[i] = (long) resultado[1];
-            iteracoesTotais[i] = (long) resultado[2];
+            trocasTotais[i] = resultado[1];
+            iteracoesTotais[i] = resultado[2];
         }
 
         // Calcula a média dos resultados e exibe
@@ -59,8 +63,9 @@ public class Main {
     }
 
     /*
-    * Este método soma os tempos de execução, as trocas e as iterações de todas as rodadas,
-    * calcula a média de cada métrica e exibe o resultado médio para o algoritmo atual.*/
+     * Este método soma os tempos de execução, as trocas e as iterações de todas as rodadas,
+     * calcula a média de cada métrica e exibe o resultado médio para o algoritmo atual.
+     */
     private static void calcularMediaResultados(long[] temposExecucao, long[] trocas, long[] iteracoes, int rodadas, String nomeAlgoritmo) {
         long tempoTotal = 0;
         long totalTrocas = 0;
