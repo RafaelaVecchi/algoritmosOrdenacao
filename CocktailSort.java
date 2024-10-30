@@ -1,7 +1,7 @@
 public class CocktailSort {
 
     // Retorna um array com [tempoExecucao, numeroTrocas, numeroIteracoes]
-    public static long[] ordenar(int[] vetor, int tamanho) {
+    public static double[] ordenar(int[] vetor, int tamanho) {
         long inicio = System.currentTimeMillis();
         long trocas = 0;
         long iteracoes = 0;
@@ -54,9 +54,9 @@ public class CocktailSort {
         }
 
         long fim = System.currentTimeMillis();
-        long tempoExecucao = fim - inicio;
+        double tempoExecucao = (fim - inicio);
 
         // Retorna as métricas no formato esperado: [tempoExecucao, numeroTrocas, numeroIteracoes]
-        return new long[]{tempoExecucao, trocas, iteracoes};
+        return new double[]{tempoExecucao, trocas, iteracoes};
     }
 }

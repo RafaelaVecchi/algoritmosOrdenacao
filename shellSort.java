@@ -7,7 +7,7 @@ public class shellSort {
  * permitindo que elementos distantes sejam comparados e movimentados para posições
  * corretas rapidamente
  * */
-    public static long[] ordenar(int[] vetor, int tamanho) {
+    public static double[] ordenar(int[] vetor, int tamanho) {
         long inicio = System.currentTimeMillis();
         long trocas = 0;
         long iteracoes = 0;
@@ -41,7 +41,7 @@ public class shellSort {
 
 
         long fim = System.currentTimeMillis();
-        long tempoExecucao = fim - inicio;
-        return new long[]{tempoExecucao, trocas, iteracoes};
+        double tempoExecucao = (fim - inicio);
+        return new double[]{tempoExecucao, trocas, iteracoes};
     }
 }

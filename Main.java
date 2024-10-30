@@ -12,13 +12,13 @@ public class Main {
 
         // Loop para executar os algoritmos de ordenação para cada tamanho de vetor
         for (int tamanho : tamanhos) {
-            System.out.println("Tamanho vetor: " + tamanho);
+            System.out.println("-----> Tamanho vetor: " + tamanho + "\n");
 
             executarAlgoritmo("InsertSort", gerador, tamanho);
             executarAlgoritmo("SelectionSort", gerador, tamanho);
             executarAlgoritmo("ShellSort", gerador, tamanho);
-            executarAlgoritmo("CocktailSort", gerador, tamanho); // Adicionado CocktailSort
-            executarAlgoritmo("GnomeSort", gerador, tamanho);    // Adicionado GnomeSort
+            executarAlgoritmo("CocktailSort", gerador, tamanho);
+            executarAlgoritmo("GnomeSort", gerador, tamanho);
 
             System.out.println("=============================================");
         }
@@ -26,15 +26,15 @@ public class Main {
 
     private static void executarAlgoritmo(String nomeAlgoritmo, geradorNumeros gerador, int tamanho) {
         // Arrays para armazenar as métricas em 5 rodadas
-        long[] temposExecucao = new long[5];
+        double[] temposExecucao = new double[5];
         long[] trocasTotais = new long[5];
         long[] iteracoesTotais = new long[5];
 
         for (int i = 0; i < 5; i++) {
             int[] vetor = gerador.gerarVetor(tamanho);
-            long[] resultado = new long[3];
+            double[] resultado = new double[3];
 
-            // Executa o algoritmo de acordo com o nome
+
             switch (nomeAlgoritmo) {
                 case "InsertSort":
                     resultado = insertSort.ordenar(vetor, tamanho);
@@ -54,8 +54,8 @@ public class Main {
             }
             // Armazena os resultados da rodada nos arrays correspondentes
             temposExecucao[i] = resultado[0];
-            trocasTotais[i] = resultado[1];
-            iteracoesTotais[i] = resultado[2];
+            trocasTotais[i] = (long) resultado[1];
+            iteracoesTotais[i] = (long) resultado[2];
         }
 
         // Calcula a média dos resultados e exibe
@@ -66,8 +66,8 @@ public class Main {
      * Este método soma os tempos de execução, as trocas e as iterações de todas as rodadas,
      * calcula a média de cada métrica e exibe o resultado médio para o algoritmo atual.
      */
-    private static void calcularMediaResultados(long[] temposExecucao, long[] trocas, long[] iteracoes, int rodadas, String nomeAlgoritmo) {
-        long tempoTotal = 0;
+    private static void calcularMediaResultados(double[] temposExecucao, long[] trocas, long[] iteracoes, int rodadas, String nomeAlgoritmo) {
+        double tempoTotal = 0;
         long totalTrocas = 0;
         long totalIteracoes = 0;
 
@@ -78,10 +78,15 @@ public class Main {
             totalIteracoes += iteracoes[i];
         }
 
+        // Calcula a média
+        double tempoMedio = tempoTotal / rodadas;
+        long trocasMedia = totalTrocas / rodadas;
+        long iteracoesMedia = totalIteracoes / rodadas;
+
         System.out.println("Algoritmo: " + nomeAlgoritmo);
-        System.out.println("Tempo médio de execução: " + ((tempoTotal / 1000) / rodadas) + " ms");
-        System.out.println("Número médio de trocas: " + (totalTrocas / rodadas));
-        System.out.println("Número médio de iterações: " + (totalIteracoes / rodadas));
+        System.out.println("Tempo médio de execução: " + tempoMedio + " ms");
+        System.out.println("Número médio de trocas: " + trocasMedia);
+        System.out.println("Número médio de iterações: " + iteracoesMedia);
         System.out.println();
     }
 }

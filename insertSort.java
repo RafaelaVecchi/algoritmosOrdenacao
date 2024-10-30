@@ -5,7 +5,7 @@ public class insertSort {
      * Este método percorre o vetor da esquerda para a direita, inserindo cada elemento na
      * posição correta dentro da parte já ordenada do vetor.
      */
-    public static long[] ordenar(int[] vetor, int tamanho) {
+    public static double[] ordenar(int[] vetor, int tamanho) {
         long inicio = System.currentTimeMillis();
         long trocas = 0;
         long iteracoes = 0;
@@ -27,7 +27,7 @@ public class insertSort {
         }
 
         long fim = System.currentTimeMillis();
-        long tempoExecucao = fim - inicio;
-        return new long[]{tempoExecucao, trocas, iteracoes};
+        double tempoExecucao = (fim - inicio); // Converte para milissegundos
+        return new double[]{tempoExecucao, trocas, iteracoes};
     }
 }

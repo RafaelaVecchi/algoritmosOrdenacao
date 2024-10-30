@@ -6,7 +6,7 @@ public class selectionSort {
      * principal e o coloca na posição correta no início da parte ainda não ordenada do vetor.
      *
      * */
-    public static long[] ordenar(int[] vetor, int tamanho) {
+    public static double[] ordenar(int[] vetor, int tamanho) {
         long inicio = System.currentTimeMillis();
         long trocas = 0;
         long iteracoes = 0;
@@ -33,7 +33,7 @@ public class selectionSort {
         }
 
         long fim = System.currentTimeMillis();
-        long tempoExecucao = fim - inicio;
-        return new long[]{tempoExecucao, trocas, iteracoes};
+        double tempoExecucao = (fim - inicio);
+        return new double[]{tempoExecucao, trocas, iteracoes};
     }
 }
