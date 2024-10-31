@@ -14,11 +14,13 @@ public class Main {
         for (int tamanho : tamanhos) {
             System.out.println("-----> Tamanho vetor: " + tamanho + "\n");
 
+            // Executa os algoritmos de ordenação
             executarAlgoritmo("InsertSort", gerador, tamanho);
             executarAlgoritmo("SelectionSort", gerador, tamanho);
             executarAlgoritmo("ShellSort", gerador, tamanho);
             executarAlgoritmo("CocktailSort", gerador, tamanho);
             executarAlgoritmo("GnomeSort", gerador, tamanho);
+            executarAlgoritmo("CountingSort", gerador, tamanho); // Chamada ao CountingSort
 
             System.out.println("=============================================");
         }
@@ -33,7 +35,6 @@ public class Main {
         for (int i = 0; i < 5; i++) {
             int[] vetor = gerador.gerarVetor(tamanho);
             double[] resultado = new double[3];
-
 
             switch (nomeAlgoritmo) {
                 case "InsertSort":
@@ -51,7 +52,11 @@ public class Main {
                 case "GnomeSort":
                     resultado = GnomeSort.ordenar(vetor, tamanho);
                     break;
+                case "CountingSort":
+                    resultado = CountingSort.ordenar(vetor, tamanho);
+                    break;
             }
+
             // Armazena os resultados da rodada nos arrays correspondentes
             temposExecucao[i] = resultado[0];
             trocasTotais[i] = (long) resultado[1];
