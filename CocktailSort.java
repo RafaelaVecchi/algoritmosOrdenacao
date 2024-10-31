@@ -56,7 +56,6 @@ public class CocktailSort {
         long fim = System.currentTimeMillis();
         double tempoExecucao = (fim - inicio);
 
-        // Retorna as métricas no formato esperado: [tempoExecucao, numeroTrocas, numeroIteracoes]
         return new double[]{tempoExecucao, trocas, iteracoes};
     }
 }
