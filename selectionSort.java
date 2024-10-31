@@ -4,7 +4,6 @@ public class selectionSort {
      *
      * Este método percorre o vetor para encontrar o menor elemento em cada iteração do loop
      * principal e o coloca na posição correta no início da parte ainda não ordenada do vetor.
-     *
      * */
     public static double[] ordenar(int[] vetor, int tamanho) {
         long inicio = System.currentTimeMillis();

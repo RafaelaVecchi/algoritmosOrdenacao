@@ -1,5 +1,18 @@
 public class CocktailSort {
 
+    /*
+     * Ordena o vetor de inteiros em ordem crescente usando o algoritmo Cocktail Sort
+     *
+     * O Cocktail Sort é uma variação do Bubble Sort que melhora a eficiência ao fazer
+     * uma passagem da esquerda para a direita e depois da direita para a esquerda
+     * Ele continua passando pelo vetor até que nenhuma troca seja necessária, indicando
+     * que o vetor está ordenado
+     *
+     * Complexidade de tempo: O(n^2) no pior e médio caso, O(n) no melhor caso (quando o vetor já está ordenado)
+     * Complexidade de espaço: O(1) - ordenação in-place, sem uso adicional de memória
+     * É um algoritmo não estável, pois pode alterar a ordem de elementos iguais
+     */
+
     // Retorna um array com [tempoExecucao, numeroTrocas, numeroIteracoes]
     public static double[] ordenar(int[] vetor, int tamanho) {
         long inicio = System.currentTimeMillis();
@@ -10,10 +23,6 @@ public class CocktailSort {
         int start = 0;
         int end = tamanho - 1;
 
-        /*
-            enquanto tudo não estiver ordenado vamos rodar seguindo uma linha da esquerda até a direita
-            e depois da direita para a esquerda, trocando os elementos de lugar
-        */
         while (swapped) {
             swapped = false;
 
@@ -49,7 +58,7 @@ public class CocktailSort {
                     swapped = true;
                 }
             }
-            
+
             start++;
         }
 

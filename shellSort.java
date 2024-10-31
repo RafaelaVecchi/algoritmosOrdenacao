@@ -1,7 +1,6 @@
 public class shellSort {
 /*
  * Ordena o vetor de inteiros em ordem crescente usando o algoritmo de Shell Sort.
- *
  * Este método utiliza a sequência de intervalos de Shell para realizar uma ordenação
  * eficiente por inserção. O intervalo é inicialmente grande e é reduzido gradualmente,
  * permitindo que elementos distantes sejam comparados e movimentados para posições
